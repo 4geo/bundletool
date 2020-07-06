@@ -20,6 +20,9 @@ apply plugin: "maven"
 
 repositories {
     jcenter()
+    maven {
+        url 'https://mvnrepository.com/artifact'
+    }
     google()
     // We need to add this custom format repo because we use r8 version which is
     // not available in gMaven yet. This repo can be removed once new version is
@@ -42,7 +45,7 @@ configurations {
 
 // The repackaging rules are defined in the "shadowJar" task below.
 dependencies {
-    compile "com.android.tools:r8:2.0.23"
+    compile "com.android.tools:r8:+"
     compile "com.android.tools.build:apkzlib:3.4.0-beta01"
     compile "com.android.tools.ddms:ddmlib:26.2.0"
 
